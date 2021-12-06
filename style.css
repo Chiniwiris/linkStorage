@@ -1,0 +1,212 @@
+}
+
+body{
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ddd;
+}
+
+input, button, select, option{
+  border: 0px;
+  outline: 0px;
+}
+
+.add-btn, .search-btn{
+  height: 25px;
+  padding: 5px;
+  border-bottom: 1px solid transparent
+};
+
+.search-btn{
+  cursor: pointer;
+}
+
+.add-btn{
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  position: relative;
+}
+
+.main-container-top{
+  padding: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.main-container-top-item{
+  float: right;
+  margin-right: 10px;
+}
+
+.main-container-body{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.container-body-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.container-body-items-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #eee;
+  margin-top: 10px;
+}
+
+.container-body-section, .container-body-items-container, .add-btn, .search-btn{
+  border-radius: 10px;
+  box-shadow: 0 0 3px #666;
+}
+
+.item{
+  width: 150px;
+  height: 200px;
+  border: 2px solid #aaa;
+  overflow: hidden;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.item-top{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items:center;
+}
+
+.item-gender{
+  margin-left: 4px;
+ flex-grow: 1; 
+}
+
+.item-edit, .item-delete, .item-gender{
+  border: 1px solid black;
+  margin-right: 4px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.item-center{
+  width: 100%;
+  height: 60%;
+  object-fit: fill;
+}
+
+.item-center img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.item-bottom{
+  width: 100%;
+  text-align: center;
+}
+
+/*hover*/
+.item:hover{
+  box-shadow: 0 0 4px rgba(255, 0, 132, 0.24)
+}
+
+.item-edit:hover{
+  background-color: #333;
+  color: #fff;
+}
+
+.item-delete:hover{
+  background-color: #555;
+  color: #fff;
+}
+
+/*slider part*/
+.edit-add-slider{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(231, 231, 231, 0.44);
+ display: none;
+}
+
+.edit-add-window{
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 0 5px #333;
+  border-radius: 10px;
+}
+
+.form{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.form input{
+  background-color: #eee;
+  margin-bottom: 8px;
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+
+.form-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form select, .confirm-btn{
+  width: 100px;
+  height: 30px; 
+}
+
+.confirm-btn{
+  background-color: #2eb;
+  border-radius: 10px;
+}
+
+.confirm-btn:hover{
+  background-color: #2ed;
+  cursor: pointer;
+}
+
+.close-btn{
+  margin-top: 10px;
+  width: 25px;
+}
+
+.close-btn:hover, .search-btn:hover{
+  background-color: red;
+  color: #fff; 
+  cursor: pointer;
+}
+
+input[type="text"]:hover, input[type="text"]:focus{
+  border-bottom: 1px solid #2ed;
+}

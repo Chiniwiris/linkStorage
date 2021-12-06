@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkStorage</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/linkstorage.ico">
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="main-container-top">
+      <button class="search-btn main-container-top-item" id="add-btn">+</button>
+      <input type="text" class="add-btn main-container-top-item" placeholder="search" id="search-bar">
+    </div>
+    <div class="main-container-body">
+      <div class="container-body-section">
+        <p class="n_resultados">resultados:</p>
+        <select name="gender" id="gender-select">
+          <!--<option value="todos">todos</option>-->
+          <!--<option value="genero 1">genero 1</option>-->
+          <!--<option value="genero 2">genero 2</option>-->
+        </select>
+      </div>
+      <div class="container-body-items-container">
+        <div class="item">
+          <div class="item-top">
+            <div class="item-gender item-top-item">gender</div>
+            <div class="item-edit item-top-item">E</div>
+            <div class="item-delete item-top-item">X</div>
+          </div>
+          <div class="item-center">
+            <img src="images/ejemplo.jpg">
+          </div>
+          <div class="item-bottom">
+            <p>title</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="edit-add-slider">
+      <div class="edit-add-window">
+        <button class="search-btn main-container-top-item close-btn" id="close-btn">x</button>
+        <div class="form">
+          <input autocomplete="off" type="text" placeholder="titulo" id='titulo'>
+          <input autocomplete="off" type="text" placeholder="url" id='url'>
+          <input autocomplete="off" ype="text" placeholder="img" id='img'>
+          <div class="form-bottom">
+            <select name="gender" id='genero'>
+              <!--<option value="">selecione un genero</option>-->
+              <!--<option value="genero 1">genero 1</option>-->
+              <!--<option value="genero 2">genero 2</option>-->
+            </select>
+            <button class="confirm-btn">confim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
