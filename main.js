@@ -155,9 +155,9 @@ const editItemFromDocument = (key, object) => {
 
 const putItemsToDbHandler = ($titulo, $imagen, $url, $genero) => {
   if (editable == false) {
-    addItemToDb($titulo, $imagen, $url, $genero);
+    addItemsToDb($titulo, $imagen, $url, $genero);
   } else if (editable != false && editKey != null) {
-    modifyItemInDb($titulo, $imagen, $url, $genero, editKey);
+    modifyItemsInDb($titulo, $imagen, $url, $genero, editKey);
     editable = false;
     editKey = null;
   }
@@ -320,13 +320,13 @@ const getIDBData = (msg, mode) => {
   })
   return objectstore;
 }
-const additemtodb = ($titulo, $imagen, $url, $genero) => {
+const addItemsToDb = ($titulo, $imagen, $url, $genero) => {
   /*var = string*/
   add({titulo: $titulo, url: $url, imagen: $imagen, genero: $genero});
   console.log('added');
 }
 
-const modifyitemindb = ($titulo, $imagen, $url, $genero, key) => {
+const modifyItemsInDb = ($titulo, $imagen, $url, $genero, key) => {
   const item = {titulo: $titulo, url: $url, imagen: $imagen, genero: $genero};
   edit(key, item);
   console.log('edited');
@@ -335,7 +335,7 @@ const modifyitemindb = ($titulo, $imagen, $url, $genero, key) => {
 //function to load the links on the document
 const getAllItemsFromDB = (gender = null, string = null) => {
   if (string != null) {
-    return new promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const result = [];
       const idb = getIDBData('all data readed', 'readonly');
       const cursor = idb.openCursor();
@@ -380,7 +380,7 @@ const getAllItemsFromDB = (gender = null, string = null) => {
       })
     })
   } else {
-    return new promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const result = [];
       const idb = getIDBData('all data readed', 'readonly');
       const cursor = idb.openCursor();
