@@ -48,13 +48,15 @@ const setBasicDataToHTML = () => {
 
 //Listeners
 $add_btn.addEventListener('click', () => {
+  let imagen = 'images/ejemplo.jpg';
   $edit_add_slider.style.display = 'inline';
   addEventListener('keypress', e => {
     if (e.key == 'Enter') {
       if ($titulo.value != '' && $url.value != '' && $genero.value != '') {
-        $imagen.value = `images/${$imagen.value}`;
-        if ($imagen.value == '') {$imagen.value = 'images/ejemplo'}
-        putItemsToDbHandler($titulo.value, $imagen.value, $url.value, $genero.value);
+        if ($imagen.files[0].name != null || $imagen.files[0].name != '') {
+          imagen = `images/${$imagen.files[0].name}`;
+        }
+        putItemsToDbHandler($titulo.value, imagen, $url.value, $genero.value);
         clearInputs();
         setItemsToDocumentHandler();
         $edit_add_slider.style.display = 'none';
@@ -96,10 +98,12 @@ $searchBar.addEventListener('change', async (e) => {
 })
 
 $confirm_btn.addEventListener('click', () => {
+  let imagen = 'images/ejemplo.jpg';
   if ($titulo.value != '' && $url.value != '' && $genero.value != '') {
-    $imagen.value = `images/${$imagen.value}`;
-    if ($imagen.value == '') {$imagen.value = 'images/ejemplo.jpg'}
-    putItemsToDbHandler($titulo.value, $imagen.value, $url.value, $genero.value);
+    if ($imagen.files[0].name != null || $imagen.files[0].name != '') {
+      imagen = `images/${$imagen.files[0].name}`;
+    }
+    putItemsToDbHandler($titulo.value, imagen, $url.value, $genero.value);
     setItemsToDocumentHandler();
     clearInputs();
     $edit_add_slider.style.display = 'none';
